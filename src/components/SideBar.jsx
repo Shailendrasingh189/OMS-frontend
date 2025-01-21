@@ -1,5 +1,4 @@
 import { useRef, useEffect } from "react";
-import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 const SideBar = ({ navOpen, setNavOpen, sidebarRef }) => {
@@ -63,12 +62,12 @@ const SideBar = ({ navOpen, setNavOpen, sidebarRef }) => {
         <div
           ref={sidebarRef}
           id="sidebar"
-          className={`fixed top-0 left-0 z-10 sm:w-64 w-64 h-screen inset-y-0 transition-transform -translate-x-full shadow-sm rounded-e-md
+          className={`fixed top-0 left-0 z-10 md:w-64 w-64 h-screen transition-transform -translate-x-full shadow-sm rounded-e-md
        text-black bg-white border-r border-gray-200 md:translate-x-0  ${
          navOpen ? "translate-x-0" : ""
        } `}
         >
-          <div className="h-full px-3 py-4 overflow-y-auto ">
+          <div className="h-full px-3 py-4 ">
             <a className="flex items-center justify-center" href="/">
             <img
               src="https://xcodersit.com/assets/img/logo/whitelogo.png"
@@ -103,11 +102,7 @@ const SideBar = ({ navOpen, setNavOpen, sidebarRef }) => {
     </>
   );
 };
-SideBar.propTypes = {
-  navOpen: PropTypes.bool.isRequired,
-  setNavOpen: PropTypes.func.isRequired,
-  sidebarRef: PropTypes.object.isRequired,
-};
+
 
 export default SideBar;
 

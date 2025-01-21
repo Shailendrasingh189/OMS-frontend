@@ -1,6 +1,6 @@
 // import { useState } from "react";
 
-const AddEnquiry = ({toggleModel}) => {
+const AddEnquiry = ({ toggleModel }) => {
   // const [formData, setFormData] = useState({
   //   name: "",
   //   email: "",
@@ -32,62 +32,43 @@ const AddEnquiry = ({toggleModel}) => {
           </div>
 
           <form onSubmit={handleSubmit} className="px-8 py-4">
-            <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
-                <label className="text-gray-700" htmlFor="studentName">
-                  Name
+                <label className="text-gray-700" htmlFor="courseName">
+                  Course Name<sup>*</sup>
                 </label>
                 <input
-                  id="studentName"
+                  id="courseName"
+                  name="courseName"
                   type="text"
-                  name="studentName"
-                  // value={formData.name}
-                  placeholder="Prakriti Kushwah"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 
-                bg-white border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20 focus:outline-none focus:ring"
-                />
-              </div>
-              <div>
-                <label className="text-gray-700" htmlFor="studentCourse">
-                  Course
-                </label>
-                <input
-                  id="studentCourse"
-                  name="studentCourse"
-                  type="text"
+                  required
                   placeholder="MERN Stack"
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white
                  border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20  focus:outline-none focus:ring no-arrows"
                 />
               </div>
               <div>
-                <label
-                  className="text-gray-700"
-                  htmlFor="studentAcademicQualification"
+                <label className="text-gray-700" htmlFor="courseCategory">
+                  Course Categories
+                </label>
+                <select
+                  id="courseCategory"
+                  name="courseCategory"
+                  className="block w-full h-10 py-2 px-4 mt-2
+                 text-gray-700  border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-40 focus:outline-none focus:ring"
                 >
-                  Academic Qualification
-                </label>
-                <input
-                  id="studentAcademicQualification"
-                  name="studentAcademicQualification"
-                  type="text"
-                  placeholder="B. tech"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white
-                 border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20  focus:outline-none focus:ring no-arrows"
-                />
-              </div>
-              <div>
-                <label className="text-gray-700" htmlFor="studentEmail">
-                  Email Address
-                </label>
-                <input
-                  id="studentEmail"
-                  name="studentEmail"
-                  type="text"
-                  placeholder="prakriti189@gmail.com"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300
-               focus:ring-opacity-20  focus:outline-none focus:ring"
-                />
+                  <option defaultValue="Select Category">
+                    Select Category
+                  </option>
+                  <option value="Job Guaranted Program">
+                    Job Guaranted Program
+                  </option>
+                  <option value="MNC Expert Program"></option>
+                  <option value="Mastery Program">Mastery Program</option>
+                  <option value="Foundation Program">Foundation Program</option>
+                  <option value="IPB Program">IPB Program</option>
+                  <option value="Crash Courses">Crash Courses</option>
+                </select>
               </div>
               <div>
                 <label className="text-gray-700" htmlFor="courseFee">
@@ -100,33 +81,6 @@ const AddEnquiry = ({toggleModel}) => {
                   placeholder="4999"
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white
                  border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20  focus:outline-none focus:ring no-arrows"
-                />
-              </div>
-              <div>
-                <label className="text-gray-700" htmlFor="yearOfPassing">
-                  Year of Passing
-                </label>
-                <input
-                  id="yearOfPassing"
-                  name="yearOfPassing"
-                  type="text"
-                  placeholder="2024"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white
-                 border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20  focus:outline-none focus:ring no-arrows"
-                />
-              </div>
-
-              <div>
-                <label className="text-gray-700" htmlFor="studentContactNo">
-                  Contact No
-                </label>
-                <input
-                  id="studentContactNo"
-                  name="studentContactNo"
-                  type="text"
-                  placeholder="+919755839451"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300
-               focus:ring-opacity-20  focus:outline-none focus:ring"
                 />
               </div>
 
@@ -143,7 +97,90 @@ const AddEnquiry = ({toggleModel}) => {
                  border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20  focus:outline-none focus:ring no-arrows"
                 />
               </div>
+              <div>
+                <label className="text-gray-700" htmlFor="studentName">
+                  Name of the candidate<sup>*</sup>
+                </label>
+                <input
+                  id="studentName"
+                  type="text"
+                  name="studentName"
+                  placeholder="Prakriti Kushwah"
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 
+                bg-white border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20 focus:outline-none focus:ring"
+                />
+              </div>
+              <div>
+                <label className="text-gray-700" htmlFor="studentEmail">
+                  Email Id
+                </label>
+                <input
+                  id="studentEmail"
+                  name="studentEmail"
+                  type="text"
+                  placeholder="prakriti189@gmail.com"
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300
+               focus:ring-opacity-20  focus:outline-none focus:ring"
+                />
+              </div>
+              <div>
+                <label className="text-gray-700" htmlFor="studentContactNo">
+                  Contact No.
+                </label>
+                <input
+                  id="studentContactNo"
+                  name="studentContactNo"
+                  type="text"
+                  placeholder="+919755839451"
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300
+               focus:ring-opacity-20  focus:outline-none focus:ring"
+                />
+              </div>
 
+              <div>
+                <label
+                  className="text-gray-700"
+                  htmlFor="studentAcademicQualification"
+                >
+                  Academic Qualification
+                </label>
+                <input
+                  id="studentAcademicQualification"
+                  name="studentAcademicQualification"
+                  type="text"
+                  placeholder="B. tech"
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white
+                 border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20  focus:outline-none focus:ring no-arrows"
+                />
+              </div>
+
+              <div>
+                <label className="text-gray-700" htmlFor="yearOfPassing">
+                  Year of Passing
+                </label>
+                <input
+                  id="yearOfPassing"
+                  name="yearOfPassing"
+                  type="text"
+                  placeholder="2024"
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white
+                 border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-20  focus:outline-none focus:ring no-arrows"
+                />
+              </div>
+
+              <div>
+                <label className="text-gray-700" htmlFor="sourceOfEnquiry">
+                  Source of Enquiry
+                </label>
+                <input
+                  id="sourceOfEnquiry"
+                  name="sourceOfEnquiry"
+                  type="text"
+                  placeholder="By google"
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-yellow-400 focus:ring-yellow-300
+               focus:ring-opacity-20  focus:outline-none focus:ring"
+                />
+              </div>
               <div>
                 <label className="text-gray-700" htmlFor="referralBy">
                   Referral By
@@ -173,12 +210,12 @@ const AddEnquiry = ({toggleModel}) => {
                 </select>
               </div>
               <div>
-                <label className="text-gray-700" htmlFor="demo">
-                  Demo
+                <label className="text-gray-700" htmlFor="demoClass">
+                  Demo Class
                 </label>
                 <select
-                  id="demo"
-                  name="demo"
+                  id="demoClass"
+                  name="demoClass"
                   className="block w-full h-10 py-2 px-4 mt-2 text-gray-700  border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-40 focus:outline-none focus:ring"
                 >
                   <option defaultValue="Select Category">Select demo</option>
@@ -201,7 +238,7 @@ const AddEnquiry = ({toggleModel}) => {
                   type="button"
                   className="px-12 py-2.5 leading-5 text-black/75 font-medium transition-colors duration-300 transform bg-gradient-to-r rounded-md bg-yellow-400 hover:bg-yellow-400 focus:outline-none focus:bg-yellow-300"
                 >
-                  Save
+                  Add Enquiry
                 </button>
               </div>
             </div>

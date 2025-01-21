@@ -1,5 +1,4 @@
-
-const CourseForm = ( {toggleModel}) => {
+const CourseForm = ({ toggleModel }) => {
   return (
     <section className="course-form">
       <div className="max-w-2xl  mx-auto mt-6 bg-white rounded-md shadow-md">
@@ -30,7 +29,7 @@ const CourseForm = ( {toggleModel}) => {
             </div>
 
             <div>
-              <label className="text-gray-700" htmlFor="courseCategories">
+              <label className="text-gray-700" htmlFor="courseCategory">
                 Course Categories
               </label>
               {/* <select
@@ -39,11 +38,16 @@ const CourseForm = ( {toggleModel}) => {
               className="block w-full px-4 py-2 mt-2 text-gray-700 
                 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
             ></select> */}
-              <select className="block w-full h-10 py-2 px-4 mt-2 text-gray-700  border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+              <select
+                id="courseCategory"
+                name="courseCategory"
+                className="block w-full h-10 py-2 px-4 mt-2 text-gray-700  border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              >
                 <option defaultValue="Select Category">Select Category</option>
                 <option value="Job Guaranted Program">
                   Job Guaranted Program
                 </option>
+                <option value="MNC Expert Program">MNC Expert Program</option>
                 <option value="Mastery Program">Mastery Program</option>
                 <option value="Foundation Program">Foundation Program</option>
                 <option value="IPB Program">IPB Program</option>
@@ -80,7 +84,8 @@ const CourseForm = ( {toggleModel}) => {
 
           <div className="flex justify-end mt-6 pb-3">
             <div className="flex justify-between items-center gap-2">
-              <button onClick={toggleModel}
+              <button
+                onClick={toggleModel}
                 type="button"
                 className="px-8 py-2.5 leading-5 font-medium text-red-600 transition-colors duration-300 transform bg-red-300 rounded-md hover:bg-red-200 focus:outline-none focus:bg-red-200"
               >
@@ -99,6 +104,5 @@ const CourseForm = ( {toggleModel}) => {
     </section>
   );
 };
-
 
 export default CourseForm;
